@@ -1,13 +1,11 @@
 import type {Config} from '@docusaurus/types';
 import type {Options, ThemeConfig} from '@docusaurus/preset-classic';
 
-const isGitHubPages = process.env.DEPLOY_TARGET === 'github-pages';
-
 const config: Config = {
   title: 'cli.dev',
   tagline: 'Independent tools, one ecosystem.',
-  url: isGitHubPages ? 'https://omry.github.io' : 'https://cli.dev',
-  baseUrl: isGitHubPages ? '/cli.dev/' : '/',
+  url: 'https://cli.dev',
+  baseUrl: '/',
   organizationName: 'omry',
   projectName: 'cli.dev',
   trailingSlash: false,

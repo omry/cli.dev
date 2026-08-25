@@ -35,8 +35,6 @@ jobs:
 
       - name: Build portal
         run: pnpm build
-        env:
-          DEPLOY_TARGET: github-pages
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v6
