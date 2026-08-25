@@ -49,5 +49,11 @@ documentation versioning, and additional locales are not enabled.
 
 ## Deployment
 
-Deployment is intentionally not configured yet. Connecting Cloudflare Pages,
-changing DNS, or publishing the site requires a separate review and approval.
+Pushes to `main` publish the portal to
+`https://omry.github.io/cli.dev/` through GitHub Pages. The deployment workflow
+builds with `DEPLOY_TARGET=github-pages`, which selects the GitHub project-site
+URL and `/cli.dev/` base path.
+
+Normal local and production builds continue to target `https://cli.dev` at the
+root path. The GitHub Pages setup does not configure a custom domain or change
+DNS.

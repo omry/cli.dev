@@ -1,4 +1,5 @@
 import type {ReactNode} from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import {
   projects,
@@ -81,6 +82,7 @@ function UnderConstructionIcon(): ReactNode {
 function ProjectCard({project}: {project: Project}): ReactNode {
   const primaryLink =
     project.links.find((link) => link.type === 'website') ?? project.links[0];
+  const graphicUrl = useBaseUrl(project.graphic.src);
 
   return (
     <article className={styles.card}>
@@ -103,7 +105,7 @@ function ProjectCard({project}: {project: Project}): ReactNode {
       <div className={styles.cardVisual}>
         <img
           className={styles.cardGraphic}
-          src={project.graphic.src}
+          src={graphicUrl}
           alt={project.graphic.alt}
           width="96"
           height="96"
