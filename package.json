@@ -1,0 +1,34 @@
+{
+  "name": "cli.dev",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@11.21.0",
+  "description": "The cli.dev ecosystem portal",
+  "scripts": {
+    "start": "docusaurus start --port 9987",
+    "build": "docusaurus build",
+    "serve": "docusaurus serve",
+    "clear": "docusaurus clear",
+    "typecheck": "tsc --noEmit",
+    "test:security-patches": "node scripts/test-security-patches.mjs"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.10.2",
+    "@docusaurus/faster": "3.10.2",
+    "@docusaurus/preset-classic": "3.10.2",
+    "@mdx-js/react": "^3.1.1",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.10.2",
+    "@docusaurus/tsconfig": "3.10.2",
+    "@docusaurus/types": "3.10.2",
+    "image-size": "2.0.2",
+    "typescript": "~5.9.3"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

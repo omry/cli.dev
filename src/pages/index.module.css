@@ -1,0 +1,240 @@
+.projects {
+  margin: 0 auto;
+  max-width: 75rem;
+  padding: 1rem 1.5rem 8rem;
+}
+
+.sectionHeading {
+  align-items: baseline;
+  border-bottom: 1px solid var(--portal-line);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0 0.25rem 1rem;
+}
+
+.sectionHeading h2 {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.sectionHeading span {
+  color: var(--portal-muted);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.8rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  align-items: center;
+  background: var(--portal-surface);
+  border: 1px solid var(--portal-line);
+  border-radius: 1rem;
+  color: var(--ifm-font-color-base);
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: auto 1fr auto;
+  padding: 1rem 1.25rem;
+  position: relative;
+  text-decoration: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.card:hover {
+  border-color: var(--portal-accent);
+  box-shadow: 0 1.25rem 3.5rem var(--portal-shadow);
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+}
+
+.cardNumber {
+  color: var(--portal-muted);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.75rem;
+  align-self: start;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.cardBody strong {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.primaryLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.primaryLink::after {
+  border-radius: 1rem;
+  content: '';
+  inset: 0;
+  position: absolute;
+}
+
+.primaryLink:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.primaryLink:focus-visible {
+  outline: none;
+}
+
+.primaryLink:focus-visible::after {
+  outline: 3px solid var(--portal-focus);
+  outline-offset: 3px;
+}
+
+.domain {
+  color: var(--portal-muted);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.78rem;
+}
+
+.description {
+  color: var(--portal-muted);
+  font-size: 0.9rem;
+  line-height: 1.35;
+  margin: 0.1rem 0 0;
+}
+
+.projectLinks {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 0.3rem;
+  position: relative;
+  width: fit-content;
+  z-index: 1;
+}
+
+.projectLink {
+  align-items: center;
+  color: var(--portal-muted);
+  display: inline-flex;
+  font-size: 0.76rem;
+  font-weight: 700;
+  gap: 0.3rem;
+  text-decoration: none;
+}
+
+.projectLink:hover {
+  color: var(--portal-accent);
+  text-decoration: none;
+}
+
+.projectLink:focus-visible {
+  border-radius: 0.2rem;
+  outline: 2px solid var(--portal-focus);
+  outline-offset: 3px;
+}
+
+.linkIcon {
+  display: block;
+  flex: 0 0 auto;
+  height: 1rem;
+  width: 1rem;
+}
+
+.cardVisual {
+  --graphic-size: clamp(6.5rem, 10vw, 7.25rem);
+  height: var(--graphic-size);
+  pointer-events: none;
+  position: relative;
+  width: var(--graphic-size);
+}
+
+.cardGraphic {
+  background: color-mix(in srgb, var(--portal-surface) 85%, var(--portal-line));
+  border: 1px solid var(--portal-line);
+  border-radius: 0.75rem;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.cardGraphic[src$='.svg'] {
+  object-fit: contain;
+}
+
+.underConstruction {
+  align-items: center;
+  background: var(--portal-surface);
+  border: 1px solid var(--portal-line);
+  border-radius: 50%;
+  bottom: -0.35rem;
+  color: var(--portal-muted);
+  display: inline-flex;
+  height: 1.75rem;
+  justify-content: center;
+  opacity: 0.55;
+  position: absolute;
+  right: -0.35rem;
+  width: 1.75rem;
+  z-index: 2;
+}
+
+.underConstruction svg {
+  height: 1rem;
+  width: 1rem;
+}
+
+.underConstruction path {
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.25;
+}
+
+.visuallyHidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media (max-width: 720px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects {
+    padding-bottom: 5rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .card {
+    gap: 0.75rem;
+    padding-inline: 1rem;
+  }
+
+  .cardVisual {
+    --graphic-size: 5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+}

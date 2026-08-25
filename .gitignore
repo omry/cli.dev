@@ -1,0 +1,15 @@
+node_modules/
+build/
+.docusaurus/
+.cache-loader/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+
