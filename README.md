@@ -1,5 +1,7 @@
 # cli.dev
 
+[![ecosystem: cli.dev](https://cli.dev/img/badges/cli-dev-ecosystem.svg)](https://cli.dev)
+
 The lightweight umbrella portal for the cli.dev ecosystem. It provides one
 directory of projects while each project keeps its own site, documentation,
 identity, and release lifecycle.
