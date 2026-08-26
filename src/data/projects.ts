@@ -33,7 +33,7 @@ export const projects: readonly Project[] = [
   },
   {
     name: 'Reploy',
-    domain: 'reploy.yadan.net',
+    domain: 'reploy.cli.dev',
     description:
       'A deployment lifecycle tool for staging, testing, installing, and operating services from portable blueprints.',
     graphic: {
@@ -41,8 +41,8 @@ export const projects: readonly Project[] = [
       alt: 'Reploy project mark',
     },
     links: [
-      {type: 'website', url: 'https://reploy.yadan.net'},
-      {type: 'docs', url: 'https://reploy.yadan.net/docs'},
+      {type: 'website', url: 'https://reploy.cli.dev'},
+      {type: 'docs', url: 'https://reploy.cli.dev/docs'},
       {type: 'github', url: 'https://github.com/omry/reploy'},
     ],
     underConstruction: true,
