@@ -18,15 +18,15 @@ export type Project = {
 export const projects: readonly Project[] = [
   {
     name: 'Arbiter',
-    domain: 'arbiter.yadan.net',
+    domain: 'arbiter.cli.dev',
     description: 'A capability firewall between AI agents and external services.',
     graphic: {
       src: '/img/projects/arbiter.svg',
       alt: 'Arbiter capability network',
     },
     links: [
-      {type: 'website', url: 'https://arbiter.yadan.net'},
-      {type: 'docs', url: 'https://arbiter.yadan.net/docs/get-started/quickstart'},
+      {type: 'website', url: 'https://arbiter.cli.dev'},
+      {type: 'docs', url: 'https://arbiter.cli.dev/docs/get-started/quickstart'},
       {type: 'github', url: 'https://github.com/omry/arbiter'},
     ],
     underConstruction: true,
