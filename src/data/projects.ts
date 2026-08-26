@@ -89,20 +89,4 @@ export const projects: readonly Project[] = [
       {type: 'github', url: 'https://github.com/omry/omegaconf'},
     ],
   },
-  {
-    name: 'Agent Skill Installer',
-    domain: 'github.com/omry/agent-skill-installer',
-    description: 'Install and manage Codex and Claude Code skills from multiple sources.',
-    graphic: {
-      src: '/img/projects/agent-skill-installer.png',
-      alt: 'Agent Skill Installer interface',
-    },
-    links: [
-      {
-        type: 'docs',
-        url: 'https://github.com/omry/agent-skill-installer#readme',
-      },
-      {type: 'github', url: 'https://github.com/omry/agent-skill-installer'},
-    ],
-  },
 ] as const;
