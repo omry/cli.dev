@@ -1,7 +1,27 @@
-.projects {
+.page {
   margin: 0 auto;
   max-width: 75rem;
-  padding: 1rem 1.5rem 8rem;
+  padding: 2.5rem 1.5rem 8rem;
+}
+
+.intro {
+  max-width: 48rem;
+  padding: 0 0.25rem 2.75rem;
+}
+
+.intro h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: -0.045em;
+  line-height: 1;
+  margin: 0 0 0.8rem;
+}
+
+.intro p {
+  color: var(--portal-muted);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 42rem;
 }
 
 .sectionHeading {
@@ -217,7 +237,7 @@
     grid-template-columns: 1fr;
   }
 
-  .projects {
+  .page {
     padding-bottom: 5rem;
   }
 }

@@ -3,7 +3,8 @@ import type {Options, ThemeConfig} from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'cli.dev',
-  tagline: 'Independent tools, one ecosystem.',
+  tagline:
+    'Tools, products, and experiments for building, deploying, and operating software.',
   url: 'https://cli.dev',
   baseUrl: '/',
   organizationName: 'omry',

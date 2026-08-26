@@ -119,19 +119,28 @@ function ProjectCard({project}: {project: Project}): ReactNode {
 
 export default function Home(): ReactNode {
   return (
-    <Layout description="A portal for the cli.dev ecosystem of independent open source projects.">
+    <Layout description="Tools, products, and experiments for building, deploying, and operating software.">
       <main>
-        <section className={styles.projects} aria-labelledby="projects-heading">
-          <div className={styles.sectionHeading}>
-            <h2 id="projects-heading">Projects</h2>
-            <span>{projects.length.toString().padStart(2, '0')}</span>
-          </div>
-          <div className={styles.grid}>
-            {projects.map((project) => (
-              <ProjectCard key={project.name} project={project} />
-            ))}
-          </div>
-        </section>
+        <div className={styles.page}>
+          <header className={styles.intro}>
+            <h1>The cli.dev ecosystem</h1>
+            <p>
+              Tools, products, and experiments for building, deploying, and
+              operating software.
+            </p>
+          </header>
+          <section aria-labelledby="projects-heading">
+            <div className={styles.sectionHeading}>
+              <h2 id="projects-heading">Projects</h2>
+              <span>{projects.length.toString().padStart(2, '0')}</span>
+            </div>
+            <div className={styles.grid}>
+              {projects.map((project) => (
+                <ProjectCard key={project.name} project={project} />
+              ))}
+            </div>
+          </section>
+        </div>
       </main>
     </Layout>
   );
