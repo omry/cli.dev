@@ -44,7 +44,7 @@ The production site is written to `build/`.
 ## Content
 
 Project names and destinations live in `src/data/projects.ts`. OmegaConf
-currently links to its Read the Docs site.
+links to its documentation site at `https://omegaconf.cli.dev/`.
 
 The portal is a single custom homepage. Docusaurus docs, blog, search,
 documentation versioning, and additional locales are not enabled.

@@ -49,7 +49,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: `© ${new Date().getFullYear()} cli.dev`,
+      copyright: `© ${new Date().getFullYear()} cli.dev · <a href="https://yadan.net/">yadan.net</a>`,
     },
   } satisfies ThemeConfig,
 };

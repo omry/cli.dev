@@ -78,14 +78,14 @@ export const projects: readonly Project[] = [
   },
   {
     name: 'OmegaConf',
-    domain: 'omegaconf.readthedocs.io',
+    domain: 'omegaconf.cli.dev',
     description: 'Hierarchical configuration with YAML, merging, and typed schemas.',
     graphic: {
       src: '/img/projects/omegaconf.png',
       alt: 'OmegaConf interpolation example',
     },
     links: [
-      {type: 'docs', url: 'https://omegaconf.readthedocs.io/en/latest/'},
+      {type: 'docs', url: 'https://omegaconf.cli.dev/'},
       {type: 'github', url: 'https://github.com/omry/omegaconf'},
     ],
   },
