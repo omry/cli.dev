@@ -10,8 +10,8 @@ identity, and release lifecycle.
 
 The JavaScript toolchain follows the Hydra website:
 
-- Node.js 24 or newer
-- pnpm 11.21 through Corepack
+- Node.js 24, declared in `.nvmrc`
+- pnpm 11.21.0 through Corepack, pinned in `package.json`
 - Docusaurus 3.10 with its v4 future flags and Faster toolchain enabled
 - React 19 and TypeScript
 
@@ -31,15 +31,31 @@ corepack pnpm start
 
 The development site is available at `http://localhost:9987`.
 
-Run the required checks before review:
+Run the required checks before review. This runs the security patch regression
+test, TypeScript checks, and production build:
 
 ```sh
-corepack pnpm run test:security-patches
-corepack pnpm run typecheck
-corepack pnpm run build
+corepack pnpm run check
 ```
 
 The production site is written to `build/`.
+
+## Dependency maintenance
+
+[Shared Docusaurus workflows](https://github.com/hydra-ecosystem/github-actions/blob/main/docs/docusaurus.md)
+audit dependencies, attempt security fixes, and propose routine upgrades in one
+maintenance PR. `.github/docusaurus.json` selects this repository's root project,
+declared tools, and `check` script. Routine upgrades can include major versions;
+security fixes are handled separately.
+
+The audit runs on January 30 at 02:00 UTC. To run it sooner, dispatch
+**Docusaurus dependency audit** from `main` in GitHub Actions. Change the schedule
+in both `.github/docusaurus.json` and `.github/workflows/dependency-audit.yml`.
+
+Before the first run, enable **Allow GitHub Actions to create and approve pull
+requests** under **Settings → Actions → General → Workflow permissions**.
+When the default `GITHUB_TOKEN` creates a PR, a maintainer may need to approve
+the PR workflows. The maintenance workflow does not deploy the website.
 
 ## Content
 
