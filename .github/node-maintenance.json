@@ -1,0 +1,16 @@
+{
+  "directory": ".",
+  "defaults": {
+    "repository": "hydra-ecosystem/github-actions",
+    "path": "defaults/node-maintenance.json",
+    "ref": "main"
+  },
+  "validationScript": "check",
+  "localPatches": [
+    "GHSA-5p2g-fcmc-qvqq",
+    [
+      "GHSA-w3rx-r6r6-pgpr",
+      "Covered by scripts/test-security-patches.mjs."
+    ]
+  ]
+}

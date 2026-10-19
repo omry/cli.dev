@@ -10,8 +10,8 @@ identity, and release lifecycle.
 
 The JavaScript toolchain follows the Hydra website:
 
-- Node.js 24, declared in `.nvmrc`
-- pnpm 11.21.0 through Corepack, pinned in `package.json`
+- Node.js 24 or newer
+- pnpm 11.21 through Corepack
 - Docusaurus 3.10 with its v4 future flags and Faster toolchain enabled
 - React 19 and TypeScript
 
@@ -31,31 +31,40 @@ corepack pnpm start
 
 The development site is available at `http://localhost:9987`.
 
-Run the required checks before review. This runs the security patch regression
-test, TypeScript checks, and production build:
+Run the required checks before review:
 
 ```sh
-corepack pnpm run check
+corepack pnpm run test:security-patches
+corepack pnpm run typecheck
+corepack pnpm run build
 ```
 
 The production site is written to `build/`.
 
 ## Dependency maintenance
 
-[Shared Docusaurus workflows](https://github.com/hydra-ecosystem/github-actions/blob/main/docs/docusaurus.md)
-audit dependencies, attempt security fixes, and propose routine upgrades in one
-maintenance PR. `.github/docusaurus.json` selects this repository's root project,
-declared tools, and `check` script. Routine upgrades can include major versions;
-security fixes are handled separately.
+[Node dependency maintenance](https://github.com/hydra-ecosystem/github-actions/blob/main/docs/node-maintenance.md)
+checks this website using `.github/node-maintenance.json` and the pinned
+`.github/workflows/dependency-audit.yml` caller. It inherits
+[shared defaults](https://github.com/hydra-ecosystem/github-actions/blob/main/defaults/node-maintenance.json):
+Node 24, pnpm 11.21.0, a ten-day release cooldown, weekly security checks,
+and quarterly routine upgrades.
 
-The audit runs on January 30 at 02:00 UTC. To run it sooner, dispatch
-**Docusaurus dependency audit** from `main` in GitHub Actions. Change the schedule
-in both `.github/docusaurus.json` and `.github/workflows/dependency-audit.yml`.
+Open **Actions → Node dependency audit → Run workflow** on `main` and choose
+**security** to check for compatible security fixes, or **upgrades** to include
+routine upgrades. The `check` script runs security patch tests, TypeScript checks,
+and the production build before dependency changes are proposed in one PR.
+Nothing merges automatically.
 
-Before the first run, enable **Allow GitHub Actions to create and approve pull
-requests** under **Settings → Actions → General → Workflow permissions**.
-When the default `GITHUB_TOKEN` creates a PR, a maintainer may need to approve
-the PR workflows. The maintenance workflow does not deploy the website.
+The existing Node and pnpm versions, dependency policies, and deployment workflow
+are preserved. A toolchain or schedule conflict fails the audit and updates one
+**Node audit configuration** issue. Correct the reported setup and rerun; a
+successful preflight closes that issue. Shared defaults never rewrite project
+declarations. If inherited schedules change, update the caller's cron entries too.
+
+Built-in PR creation is enabled in this repository, with default token permissions
+remaining read-only. PRs created by the built-in token do not trigger other
+workflows automatically; the audit itself runs the configured checks.
 
 ## Content
 
