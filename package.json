@@ -10,7 +10,8 @@
     "serve": "docusaurus serve",
     "clear": "docusaurus clear",
     "typecheck": "tsc --noEmit",
-    "test:security-patches": "node scripts/test-security-patches.mjs"
+    "test:security-patches": "node scripts/test-security-patches.mjs",
+    "check": "corepack pnpm run test:security-patches && corepack pnpm run typecheck && corepack pnpm run build"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.2",

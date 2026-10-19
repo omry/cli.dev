@@ -41,6 +41,31 @@ corepack pnpm run build
 
 The production site is written to `build/`.
 
+## Dependency maintenance
+
+[Node dependency maintenance](https://github.com/hydra-ecosystem/github-actions/blob/main/docs/node-maintenance.md)
+checks this website using `.github/node-maintenance.json` and the pinned
+`.github/workflows/dependency-audit.yml` caller. It inherits
+[shared defaults](https://github.com/hydra-ecosystem/github-actions/blob/main/defaults/node-maintenance.json):
+Node 24, pnpm 11.21.0, a ten-day release cooldown, weekly security checks,
+and quarterly routine upgrades.
+
+Open **Actions → Node dependency audit → Run workflow** on `main` and choose
+**security** to check for compatible security fixes, or **upgrades** to include
+routine upgrades. The `check` script runs security patch tests, TypeScript checks,
+and the production build before dependency changes are proposed in one PR.
+Nothing merges automatically.
+
+The existing Node and pnpm versions, dependency policies, and deployment workflow
+are preserved. A toolchain or schedule conflict fails the audit and updates one
+**Node audit configuration** issue. Correct the reported setup and rerun; a
+successful preflight closes that issue. Shared defaults never rewrite project
+declarations. If inherited schedules change, update the caller's cron entries too.
+
+Built-in PR creation is enabled in this repository, with default token permissions
+remaining read-only. PRs created by the built-in token do not trigger other
+workflows automatically; the audit itself runs the configured checks.
+
 ## Content
 
 Project names and destinations live in `src/data/projects.ts`. OmegaConf
