@@ -26,7 +26,7 @@ jobs:
     permissions:
       contents: read
       issues: write
-    uses: hydra-ecosystem/github-actions/.github/workflows/node-audit.yml@fc4a8057bdbf2c62a089c953fb6ea7fde2d35ca7
+    uses: hydra-ecosystem/github-actions/.github/workflows/node-audit.yml@f48a4357970210297abd60283d0b133c120abe66
     with:
       audit-kind: ${{ inputs.audit-kind || 'auto' }}
 
@@ -35,7 +35,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    uses: hydra-ecosystem/github-actions/.github/workflows/node-publish.yml@fc4a8057bdbf2c62a089c953fb6ea7fde2d35ca7
+    uses: hydra-ecosystem/github-actions/.github/workflows/node-publish.yml@f48a4357970210297abd60283d0b133c120abe66
     with:
       validation-passed: ${{ needs.audit.outputs.validation_passed }}
       app-client-id: ${{ vars.NODE_AUDIT_APP_CLIENT_ID }}
