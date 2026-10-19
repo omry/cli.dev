@@ -17,8 +17,8 @@ The JavaScript toolchain follows the Hydra website:
 
 The pnpm workspace also applies Hydra's dependency controls: a minimum package
 release age, restricted dependency build scripts, targeted security overrides,
-and a patched `image-size` package with a regression test. The SWC build script
-is explicitly allowed because Docusaurus Faster requires its native compiler.
+and regression tests for the upstream `image-size` parser fixes. The SWC build
+script is explicitly allowed because Docusaurus Faster requires its native compiler.
 
 ## Local development
 
