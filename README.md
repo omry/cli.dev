@@ -50,7 +50,7 @@ checks this website using `.github/node-maintenance.json` and the pinned
 Node 24, pnpm 11.21.0, a ten-day release cooldown, weekly security checks,
 and quarterly routine upgrades.
 
-Open **Actions → Node dependency audit → Run workflow** on `main` and choose
+Open **Actions → Node dependency maintenance → Run workflow** on `main` and choose
 **security** to check for compatible security fixes, or **upgrades** to include
 routine upgrades. The `check` script runs security patch tests, TypeScript checks,
 and the production build before dependency changes are proposed in one PR.
